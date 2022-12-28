@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">AndroidStudy</string>
     <string name="tv2">Activity Main2</string>
     <string name="btn1">跳转到Main2</string>
     <string name="btn2">跳转到Main1</string>
