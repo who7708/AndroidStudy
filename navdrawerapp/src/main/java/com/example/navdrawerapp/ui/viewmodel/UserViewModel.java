@@ -1,5 +1,7 @@
 package com.example.navdrawerapp.ui.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -11,6 +13,8 @@ import com.example.navdrawerapp.ui.viewmodel.bean.User;
  * @since 2022-12-30
  */
 public class UserViewModel extends ViewModel {
+    private static final String TAG = UserViewModel.class.getSimpleName();
+
     public final MutableLiveData<User> mUserLiveData;
 
     public UserViewModel() {
@@ -29,4 +33,9 @@ public class UserViewModel extends ViewModel {
         }
     }
 
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        Log.d(TAG, "onCleared: ");
+    }
 }
