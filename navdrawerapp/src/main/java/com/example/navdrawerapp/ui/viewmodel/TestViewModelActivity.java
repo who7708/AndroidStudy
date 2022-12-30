@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.navdrawerapp.R;
 import com.example.navdrawerapp.databinding.ActivityTestViewModelBinding;
 import com.example.navdrawerapp.ui.viewmodel.bean.User;
+import com.example.navdrawerapp.utils.FragmentUtils;
 
 public class TestViewModelActivity extends AppCompatActivity {
 
@@ -53,7 +54,8 @@ public class TestViewModelActivity extends AppCompatActivity {
                 FragmentManager fm = getSupportFragmentManager();
                 // 开启Fragment事务
                 FragmentTransaction transaction = fm.beginTransaction();
-                MyUserFragment twoFragment = new MyUserFragment();
+                // MyUserFragment twoFragment = new MyUserFragment();
+                MyUserFragment twoFragment = FragmentUtils.getFragment(MyUserFragment.class);
                 // 使用当前Fragment的布局替代fl的控件
                 transaction.replace(R.id.fr_container, twoFragment);
                 // transaction.addToBackStack();  // 将事物添加到back栈，允许用户按BACK按键返回到替换Fragment之前的状态
