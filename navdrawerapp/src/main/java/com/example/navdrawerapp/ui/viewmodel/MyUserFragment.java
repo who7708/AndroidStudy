@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.navdrawerapp.databinding.FragmentMyUserBinding;
 import com.example.navdrawerapp.ui.viewmodel.bean.User;
+import com.example.navdrawerapp.utils.JsonUtils;
 
 /**
  * @author Chris
@@ -41,7 +43,13 @@ public class MyUserFragment extends Fragment {
         // 2. 使用getActivity()
         UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         Log.d(TAG, "onStart: " + userViewModel);
-        User user = userViewModel.mUserLiveData.getValue();
-        binding.frTvShow.setText(user + "");
+        // User user = userViewModel.mUserLiveData.getValue();
+        // binding.frTvShow.setText(user + "");
+        userViewModel.mUserLiveData.observe(getViewLifecycleOwner(), new Observer<User>() {
+            @Override
+            public void onChanged(User user) {
+                binding.frTvShow.setText(JsonUtils.toJson(user));
+            }
+        });
     }
 }
