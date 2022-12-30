@@ -11,4 +11,5 @@
     <string name="menu_gallery">相册</string>
     <string name="menu_slideshow">幻灯片</string>
     <string name="update_content">更新文本内容</string>
+    <string name="start_fragment">启动Fragment</string>
 </resources>

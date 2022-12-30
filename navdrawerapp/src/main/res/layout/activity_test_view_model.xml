@@ -19,4 +19,18 @@
         android:layout_height="wrap_content"
         android:text="@string/update_content"
         android:textSize="17sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_fragment"
+        android:textAllCaps="false"
+        android:textSize="17sp" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fr_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@null" />
 </LinearLayout>
