@@ -41,6 +41,7 @@ public class MyUserFragment extends Fragment {
         // 这里拿到的ViewModel实例,其实是和Activity中创建的是一个实例
         // 1. activity 跳转 fragment
         // 2. 使用getActivity()
+        // 3. 此时 userViewModel 与 TestViewModelActivity中获取的 userViewModel 是同一个对象
         UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         Log.d(TAG, "onStart: " + userViewModel);
         // User user = userViewModel.mUserLiveData.getValue();
